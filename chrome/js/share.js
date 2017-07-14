@@ -883,7 +883,7 @@
 	                    var length = file_list.length;
 	                    for (var i = 0; i < length; i++) {
 	                        var filename = (navigator.platform.indexOf("Win") != -1) ? JSON.stringify(file_list[i].name) : CORE.escapeString(file_list[i].name);
-	                        files.push("aria2c -c -t1 -m0 --connect-timeout=1 --auto-file-renaming=false -s16 -k100K -x16 -j16 --enable-rpc=false -o " + filename + CORE.getHeader("aria2c_line") + " " + JSON.stringify(file_list[i].link) + "\n");
+	                        files.push("sleep 1 && aria2c -c -t1 -m0 --connect-timeout=1 --auto-file-renaming=false -s16 -k100K -x16 -j16 --enable-rpc=false -o " + filename + CORE.getHeader("aria2c_line") + " " + JSON.stringify(file_list[i].link) + "\n");
 	                        aria2c_txt.push([
 	                            file_list[i].link,
 	                            CORE.getHeader("aria2c_txt"),
