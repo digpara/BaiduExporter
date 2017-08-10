@@ -476,7 +476,7 @@ var CORE = (function() {
                     var length = file_list.length;
                     for (var i = 0; i < length; i++) {
                         var filename = (navigator.platform.indexOf("Win") != -1) ? JSON.stringify(file_list[i].name) : CORE.escapeString(file_list[i].name);
-                        var cmd_line = "aria2c -c -s10 -k1M -x16 --enable-rpc=false -o " + filename + CORE.getHeader("aria2c_line") + " " + JSON.stringify(file_list[i].link);
+                        var cmd_line = "sleep 1 && aria2c -c -t1 -m0 --connect-timeout=1 --auto-file-renaming=false -s16 -k1M -x16 -j16 --enable-rpc=false -o " + filename + CORE.getHeader("aria2c_line") + " " + JSON.stringify(file_list[i].link);
                         aria2c_txt_item = [
                             file_list[i].link,
                             CORE.getHeader("aria2c_txt"),
