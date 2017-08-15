@@ -55,7 +55,7 @@ var showToast;
             var request = event.data.data;
             showToast(request.message, request.type);
 
-            var button = $("#export_menu");
+            var button = $("#exp_menu");
             if (button.length != 0) {
                 try {
                     button.parent()[0].removeChild = function () {
